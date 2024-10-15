@@ -8,6 +8,7 @@ const hanoi = (discos: number, torreI: string, torreF: string, torreAux: string)
         console.log("Se ha movido el disco "+discos+" de la "+torreI+" a la "+torreF)
         hanoi(discos-1, torreAux, torreF, torreI)
     }
+    
 }
 
 hanoi(3, "Torre Inicial", "Torre Final", "Torre Auxiliar")
