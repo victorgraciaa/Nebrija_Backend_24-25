@@ -1,3 +1,5 @@
+//P2
+
 type Producto = {
   id: number,
   name: string,
