@@ -18,7 +18,7 @@ export const resolvers = {
                 return flights
             }
 
-            const models = await context.FlightCollection.find({}).toArray()
+            const models = await context.FlightCollection.find().toArray()
             const flights = models.map((elem) => fromModeltoFlight(elem))
 
             return flights
