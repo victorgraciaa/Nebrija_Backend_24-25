@@ -3,7 +3,9 @@ import { ObjectId } from "mongodb";
 import { ProjectModel, status, TaskModel, UserModel } from "./types.ts";
 import { fromModelToProject, fromModelToTask, fromModelToUser } from "./utils.ts";
 
-const url = Deno.env.get("MONGO_URL")
+//const url = Deno.env.get("MONGO_URL")
+
+const url = "mongodb+srv://victorgraciaa:nebrija2425@cluster-nebrija-24-25.t7web.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-Nebrija-24-25"
 
 if(!url){
   throw new Error("MONGO_URL is not set")
