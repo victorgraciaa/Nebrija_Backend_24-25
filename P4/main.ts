@@ -6,8 +6,7 @@ import { fromModelToProject, fromModelToTask, fromModelToUser } from "./utils.ts
 const url = Deno.env.get("MONGO_URL")
 
 if(!url){
-  console.log("MONGO_URL is not set")
-  Deno.exit(1)
+  throw new Error("MONGO_URL is not set")
 }
 
 const client = new MongoClient(url)
