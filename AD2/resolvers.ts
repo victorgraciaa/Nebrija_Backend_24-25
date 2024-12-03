@@ -8,17 +8,17 @@ export const resolvers = {
         getFlights: async (
             _: unknown,
             args: { origen?: string, destino?: string},
-            context: { FlightCollection: Collection<FlightModel> }
+            context: { FlightsCollection: Collection<FlightModel> }
         ): Promise<Flight[]> => {
 
             if(args.origen && args.destino){
-                const models = await context.FlightCollection.find({ $and: [{origen: args.origen}, {destino: args.destino}] }).toArray()
+                const models = await context.FlightsCollection.find({ $and: [{origen: args.origen}, {destino: args.destino}] }).toArray()
                 const flights = models.map((elem) => fromModeltoFlight(elem))
 
                 return flights
             }
 
-            const models = await context.FlightCollection.find().toArray()
+            const models = await context.FlightsCollection.find().toArray()
             const flights = models.map((elem) => fromModeltoFlight(elem))
 
             return flights
@@ -26,9 +26,9 @@ export const resolvers = {
         getFlight: async (
             _: unknown,
             args: {id: string},
-            context: { FlightCollection: Collection<FlightModel> }
+            context: { FlightsCollection: Collection<FlightModel> }
         ): Promise<Flight | null> => {
-            const model = await context.FlightCollection.findOne({_id: new ObjectId(args.id)})
+            const model = await context.FlightsCollection.findOne({_id: new ObjectId(args.id)})
 
             if(!model){
                 return null
@@ -42,9 +42,9 @@ export const resolvers = {
         addFlight: async (
             _: unknown,
             args: { origen: string, destino: string, fechaYhora: string },
-            context: { FlightCollection: Collection<FlightModel> }
+            context: { FlightsCollection: Collection<FlightModel> }
         ): Promise<Flight> => {
-            const insertedFlight = await context.FlightCollection.insertOne({
+            const insertedFlight = await context.FlightsCollection.insertOne({
                 origen: args.origen,
                 destino: args.destino,
                 fechaYhora: args.fechaYhora
