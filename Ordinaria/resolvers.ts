@@ -45,7 +45,7 @@ export const resolvers = {
                 throw new GraphQLError("API Error")
             }
 
-            const dataCity: CityAPI = await responseCity.json()
+            const dataCity = await responseCity.json()
             const lat = dataCity[0].latitude
             const lon = dataCity[0].longitude
             
@@ -78,7 +78,7 @@ export const resolvers = {
                 throw new GraphQLError("API Error")
             }
 
-            const dataCity: CityAPI = await responseCity.json()
+            const dataCity = await responseCity.json()
             const lat = dataCity[0].latitude
             const lon = dataCity[0].longitude
 
@@ -164,7 +164,7 @@ export const resolvers = {
                 throw new GraphQLError("API Error")
             }
 
-            const dataCity: CityAPI = await responseCity.json()
+            const dataCity = await responseCity.json()
             const lat = dataCity[0].latitude
             const lon = dataCity[0].longitude
 
