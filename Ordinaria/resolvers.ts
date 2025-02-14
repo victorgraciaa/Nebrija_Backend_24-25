@@ -82,7 +82,7 @@ export const resolvers = {
             const lat = dataCity[0].latitude
             const lon = dataCity[0].longitude
 
-            const responseHora = await fetch(`https://api.api-ninjas.com/v1/worldtime?lat=${lat}&lon=${lon}}`, {
+            const responseHora = await fetch(`https://api.api-ninjas.com/v1/worldtime?lat=${lat}&lon=${lon}`, {
                 headers: {
                     "X-Api-Key": API_KEY
                 }
